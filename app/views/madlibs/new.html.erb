@@ -1,0 +1,14 @@
+<div class= "row">
+	<div class="col-md-12">
+		<%= simple_form_for @madlib do |f| %>
+			<h3>Step 1
+			<small>Create or enter a story you would like Madlibed</small></h3>
+			<hr>
+			<%= f.input :title %>
+		  	<%= f.input :description %>
+			<%= f.input :story, as: :text, input_html: { rows: "6" } %>	
+			<%= f.button :submit, class: 'btn-primary btn-block center-block' %>
+		<% end %>
+	</div>
+		
+</div>

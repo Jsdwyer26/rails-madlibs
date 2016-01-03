@@ -1,0 +1,11 @@
+<div class= "text-center">
+	<h3><strong>Title: </strong><br> <%= @madlib.title.titleize %></h3>
+	<hr>
+	<h4><%= @madlib.description %></h4>
+	<p><%= @madlib.story %></p>
+	<p><%= @madlib.story.gsub! @madlib.blanks[0], @madlib.blanks[1]%></p> 
+	<p><%= @madlib.blanks %></p>
+
+	
+
+</div>

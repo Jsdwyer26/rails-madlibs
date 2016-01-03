@@ -1,0 +1,29 @@
+<div>
+	<h1 class="text-center">Mad Libs</h1>
+<hr>
+<%= link_to "New Mad Lib", new_madlib_path, class: "btn btn-primary btn-sm" %>
+	<br><br />
+</div>	
+
+
+<table class="table table-striped">
+	<tr>
+		<th>Story Title</th>
+		<th>Story Description</th>
+		<th>Show Story</th>
+		<th>Edit Story</th>
+		<th>Created</th>
+		<th>Destroy</th>	
+	</tr>
+	
+	<% @madlibs.each do |madlib| %>
+		<tr>
+			<td><%= madlib.title %></td>
+			<td><%= madlib.description %></td>
+			<td><%= link_to "Show Details", madlib, class: "btn-sm btn-default"%></td>
+			<td><%= link_to "Edit", edit_madlib_path(madlib), class: "btn-sm btn-default"%></td>
+			<td><%=time_ago_in_words(madlib.created_at)%></td>
+			<td><%= link_to "Delete", madlib, method: :delete, class: "btn-sm btn-default"%></td>
+		</tr>	
+	<% end %>
+</table>
